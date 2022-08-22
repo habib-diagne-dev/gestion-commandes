@@ -1,26 +1,10 @@
 <script>
     import axios from "axios";
-    import { Button, Table } from "attractions";
+    // import { Button, Table } from "attractions";
     import { onMount } from "svelte";
     import { fly } from "svelte/transition";
     import SvgIcon from "./icons/SVGIcon.svelte";
     import { ProductAdd, ModeEdit, Details } from "./icons/Icons";
-
-    const headers = [
-        { text: "First Name", value: "firstName" },
-        { text: "Last Name", value: "lastName" },
-        { text: "Age", value: "age", align: "end" },
-    ];
-    const items = [
-        { firstName: "John", lastName: "Doe", age: 694 },
-        {
-            firstName: "Leo",
-            lastName: "Tolstoy",
-            age: new Date().getFullYear() - 1828,
-        },
-        { firstName: "فلان", lastName: "الفلاني", age: 42 },
-        { firstName: "Иван", lastName: "Иванов", age: 69 },
-    ];
 
     const SERVER = "localhost";
     const PORT = 4000;
@@ -165,12 +149,10 @@
         >
             <SvgIcon d={ProductAdd} />
         </button>
-
-        <Table {headers} {items} />
     </div>
 </div>
 
-<!-- Formulaire d'ajout de fournisseurs masqué par défaut -->
+<!-- Formulaire d'ajout de produits masqué par défaut -->
 {#if isVisible}
     <form
         class="row g-3"
